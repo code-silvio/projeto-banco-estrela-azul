@@ -1,0 +1,31 @@
+package br.com.bancoestrelaazul.financeiro.entity;
+
+import lombok.Builder;
+import lombok.Data;
+
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+@Data
+@Builder
+@Entity(name = "movimentacoes")
+public class Movimentacao {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "valor")
+    private BigDecimal valor;
+
+    @Enumerated
+    @Column(name = "tipo_de_movimento")
+    private TipoDeMovimento tipoDeMovimento;
+
+    @Column(name = "data_movimento")
+    private LocalDateTime dataMovimento;
+
+    @Column(name = "numero_conta")
+    private Long numeroDaConta;
+}
