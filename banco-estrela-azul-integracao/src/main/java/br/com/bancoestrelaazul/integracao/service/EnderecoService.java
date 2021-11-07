@@ -19,12 +19,12 @@ public class EnderecoService {
         this.client = client;
     }
 
-    public EnderecoDTO getEnderecoByCep(final String cep) throws Exception {
-        validaCep(cep);
+    public EnderecoDTO getEnderecoByCep(final Integer cep) throws Exception {
+        validaCep(String.valueOf(cep));
 
         log.info("Request cep: {}", cep);
 
-        final EnderecoDTO dto = client.getEnderecoByCep(cep);
+        final EnderecoDTO dto = client.getEnderecoByCep(String.valueOf(cep));
 
         log.info("Response endereco: {}", dto);
         return dto;

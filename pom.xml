@@ -28,6 +28,7 @@
         <module>banco-estrela-azul-financeiro</module>
         <module>banco-estrela-azul-integracao</module> 
         <module>banco-estrela-azul-relatorio</module>
+        <module>banco-estrela-azul-web</module>
         <module>banco-estrela-azul-app</module>
       
     </modules>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"  lang="pt-br">
+    <head>
+        <title>Banco Estrela Azul</title>
+        <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    </head>
+    <body>
+
+        <di class="row" >
+            <di class="mb-3">
+                <h3 class="display-4">Banco Estrela Azul</h3>
+            </di>
+        </di>
+
+        <div class="homeUser">
+            <table class="table" >
+                <tr>
+                    <th>Número da Conta</th>
+                    <th>Nome</th>
+                    <th>Saldo Atual</th>
+                    <th>Data</th>
+                </tr>
+                <tr th:object="${homeUser}">
+                    <td th:text="${homeUser.numeroDaConta}" />
+                    <td th:text="${homeUser.nome}" />
+                    <td>R$ <span th:text="${#numbers.formatDecimal(homeUser.saldo, 0, 'POINT', 2, 'COMMA')}"></span></td>
+                    <td><span th:text="${#temporals.format(homeUser.dataAtualizacao, 'dd/MMM/yyyy HH:mm')}"></span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="../static/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
+    </body>
+</html>

@@ -14,7 +14,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>br.com.bancoestrelaazul</groupId>
 			<artifactId>banco-estrela-azul-cliente</artifactId>
@@ -33,6 +32,11 @@
 		<dependency>
 			<groupId>br.com.bancoestrelaazul</groupId>
 			<artifactId>banco-estrela-azul-relatorio</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>br.com.bancoestrelaazul</groupId>
+			<artifactId>banco-estrela-azul-web</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

@@ -1,8 +1,1 @@
-spring:
-  datasource:
-    url: jdbc:h2:mem:estrelaazul
-    driverClassName: org.h2.Driver
-    username: estrela_azul
-    password: 123
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+

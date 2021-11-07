@@ -23,12 +23,16 @@ public class FinanceiroService {
         Optional<Saldo> saldo = saldoService.getSaldoByNumeroDaConta(numeroDaConta);
 
         if(saldo.isPresent()){
-            saldo.get().setValor(valor);
+            saldo.get().setSaldoAtual(valor);
             return saldoService.atualizar(saldo.get());
         }
 
-        final Saldo novoSaldo = Saldo.builder().numeroDaConta(numeroDaConta).valor(valor)
+        final Saldo novoSaldo = Saldo.builder().numeroDaConta(numeroDaConta).saldoAtual(valor)
                 .dataAtualizacao(LocalDateTime.now()).build();
         return saldoService.adicionar(novoSaldo);
+    }
+
+    public Optional<Saldo> getSaldoByNumeroDaConta(Long numeroDaConta) {
+        return saldoService.getSaldoByNumeroDaConta(numeroDaConta);
     }
 }

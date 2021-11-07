@@ -1,9 +1,25 @@
+## http://localhost:8080/bancoestrelaazul/h2-console
 # Database config
 spring:
+  application:
+    name: Banco Estrela Azul
   datasource:
-    url: jdbc:h2:mem:estrelaazul
+    url: jdbc:h2:mem:estrelaazul;DB_CLOSE_DELAY=-1
     driverClassName: org.h2.Driver
     username: estrela_azul
     password: 123
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+  h2:
+    console.enabled: true
+
+
+# Server config
+server:
+  servlet:
+    context-path: /bancoestrelaazul
+
+
