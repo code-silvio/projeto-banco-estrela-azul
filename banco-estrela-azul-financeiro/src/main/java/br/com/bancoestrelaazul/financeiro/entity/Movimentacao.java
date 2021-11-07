@@ -1,7 +1,9 @@
 package br.com.bancoestrelaazul.financeiro.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -9,6 +11,8 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "movimentacoes")
 public class Movimentacao {
 
@@ -19,7 +23,7 @@ public class Movimentacao {
     @Column(name = "valor")
     private BigDecimal valor;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(name = "tipo_de_movimento")
     private TipoDeMovimento tipoDeMovimento;
 

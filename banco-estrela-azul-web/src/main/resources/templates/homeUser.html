@@ -28,9 +28,27 @@
                     <td><span th:text="${#temporals.format(homeUser.dataAtualizacao, 'dd/MMM/yyyy HH:mm')}"></span></td>
                 </tr>
             </table>
+
+            <di class="row" >
+                <di class="mb-3">
+                    <h6 class="display-6">Extrato</h6>
+                </di>
+            </di>
+
+            <table class="table" >
+                <tr>
+                    <th>Data da Movimentação</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                </tr>
+                <tr th:each="movimento: ${homeUser.extratoList}" >
+                    <td><span th:text="${#temporals.format(movimento.dataMovimento, 'dd/MMM/yyyy HH:mm')}"></span></td>
+                    <td th:text="${movimento.tipoDeMovimento}" />
+                    <td>R$ <span th:text="${#numbers.formatDecimal(movimento.valor, 0, 'POINT', 2, 'COMMA')}"></span></td>
+                </tr>
+            </table>
         </div>
 
-        <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="../static/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
     </body>

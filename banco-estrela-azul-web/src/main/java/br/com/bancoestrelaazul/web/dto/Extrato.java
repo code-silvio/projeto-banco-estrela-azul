@@ -1,6 +1,6 @@
 package br.com.bancoestrelaazul.web.dto;
 
-
+import br.com.bancoestrelaazul.financeiro.entity.TipoDeMovimento;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,18 +8,15 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class HomeUsuario {
+public class Extrato {
 
-    private Long numeroDaConta;
-    private String nome;
-    private BigDecimal saldo;
-    private LocalDateTime dataAtualizacao;
-    private List<Extrato> extratoList;
+    private BigDecimal valor;
+    private TipoDeMovimento tipoDeMovimento;
+    private LocalDateTime dataMovimento;
 
 }

@@ -26,4 +26,5 @@ public class SaldoService {
     public Saldo adicionar(Saldo novoSaldo) {
         return saldoRepository.save(novoSaldo);
     }
+
 }
